@@ -162,10 +162,11 @@ var $window = $(window);
 
         });
     }
+    /*console.log('s',task_list);*/
     function del_task(index) {
         /* 如果index的值为undefined,注意0的时候，或者不存在则直接返回 */
         if(index === undefined || !task_list[index]) return;
-        /* 使用splice */
+        /* 防止内存泄露 */
         task_list.splice(index,1);
         /* 存进localstore中 */
         r_task_list();
@@ -246,9 +247,9 @@ var $window = $(window);
     /* 循环模板 */
     function render(data, index) {
         /* 如果Data为空或者indexundefined等于则直接返回 */
-        if(!data || index ===undefined) return;
+        if(!data || index === undefined) return;
         var ren_task = '<div class="tast-item" data-index="' + index + '">' +
-            '<span><input  class="completes"' + (data.completes? 'checked':'') + ' type="checkbox"></span>'+
+            '<span><input  class="completes"' + (data.completes? 'checked': '') + ' type="checkbox"></span>'+
             '<span class="task-container">'+data.content+'</span>'+
             '<span class="fl">'+
         '<span class="action" >  删除</span>'+
