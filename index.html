@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My todo</title>
+    <!-- 样式常规化normalize -->
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="node_modules/jquery-datetimepicker/build/jquery.datetimepicker.min.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<div class="msg">
+    <span class="msg-content"> </span>
+        <span  class="confirme">我知道了</span>
+</div>
+<!-- 内容区域 -->
+<div class="container"><!-- 总容器 -->
+    <h1>Mytodo</h1>
+    <!-- 搜索栏 -->
+    <div class="task-add" >
+        <input type="text" placeholder="明天早上7点起床" id="textcontent" autofocus autocomplete="off">
+        <button type="submit" id="sub">确定</button>
+    </div>
+    <!-- 任务清单列表 -->
+    <div class="task-list">
+        <!--<div class="tast-item">&lt;!&ndash; 任务 &ndash;&gt;
+            <span><input type="checkbox"></span>
+            <span class="task-container">item 1</span>
+            <span class="task-del">delete</span>
+            <span >d</span>
+        </div>
+        <div class="tast-item">
+            <span><input type="checkbox"></span>
+            <span class="task-container">item 1</span>
+            <span class="task-del">delete</span>
+            <span >d</span>
+        </div>
+        </div> <div class="tast-item">
+            <span><input type="checkbox"></span>
+            <span class="task-container">item 1</span>
+            <span class="task-del">delete</span>
+            <span >d</span>
+        </div>-->
+
+    </div>
+    <!-- 遮罩 -->
+    <div class="task-det-mask"></div>
+    <!-- 任务详情描述 -->
+    <div class="task-det">
+    </div>
+</div>
+<audio id="al" class="alerter">
+    <source src="node_modules/alert.mp3" type="audio/mp3">
+</audio>
+</body>
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="node_modules/storejs/dist/store.js">
+</script>
+<script type="text/javascript" src="js/base.js">
+</script>
+<script type="text/javascript" src="node_modules/jquery-datetimepicker/build/jquery.datetimepicker.full.js">
+</script>
+</html>
