@@ -163,8 +163,8 @@ var $window = $(window);
         });
     }
     function del_task(index) {
-       /* 如果Data为空或者indexundefined等于则直接返回 */
-        if(data === null || index ===undefined) return;
+        /* 如果index的值为undefined,注意0的时候，或者不存在则直接返回 */
+        if(index === undefined || !task_list[index]) return;
         /* 使用splice */
         task_list.splice(index,1);
         /* 存进localstore中 */
@@ -245,8 +245,8 @@ var $window = $(window);
     }
     /* 循环模板 */
     function render(data, index) {
-        /* 如果没有Data或者index则直接返回 */
-        if(!data || !index) return;
+        /* 如果Data为空或者indexundefined等于则直接返回 */
+        if(data === null || index ===undefined) return;
         var ren_task = '<div class="tast-item" data-index="' + index + '">' +
             '<span><input  class="completes"' + (data.completes? 'checked':'') + ' type="checkbox"></span>'+
             '<span class="task-container">'+data.content+'</span>'+
