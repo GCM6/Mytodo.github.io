@@ -249,7 +249,7 @@ var $window = $(window);
         /* 如果Data为空或者indexundefined等于则直接返回 */
         if(!data || index === undefined) return;
         var ren_task = '<div class="tast-item" data-index="' + index + '">' +
-            '<span><input  class="completes"' + (data.completes? 'checked': '') + ' type="checkbox"></span>'+
+            '<span><input  class="completes"' + ((data.completes)?'checked':'' || 'undefined') + ' type="checkbox"></span>'+
             '<span class="task-container">'+data.content+'</span>'+
             '<span class="fl">'+
         '<span class="action" >  删除</span>'+
